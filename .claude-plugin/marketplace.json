@@ -11,7 +11,7 @@
   "plugins": [
     {
       "name": "tycana",
-      "source": ".",
+      "source": "./plugins/tycana",
       "description": "AI productivity partner — persistent tasks, energy-aware planning, intelligent reviews, and daily workflows through natural conversation.",
       "version": "1.0.0",
       "author": {
