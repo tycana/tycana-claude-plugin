@@ -1,4 +1,18 @@
-# Tycana — AI Productivity Partner
+<p align="center">
+  <img src="tycana-logo.svg" alt="Tycana" width="300">
+</p>
+
+<p align="center">
+  <strong>AI productivity partner — capture, plan, review, and think through your work with Claude.</strong>
+</p>
+
+<p align="center">
+  <a href="https://www.tycana.com/getting-started/">Get Started</a> &middot;
+  <a href="https://www.tycana.com">Website</a> &middot;
+  <a href="https://www.tycana.com/mcp/">MCP Docs</a>
+</p>
+
+---
 
 Tycana turns Claude into your productivity partner. Capture tasks with full context, plan energy-aware days, get honest progress reviews, and brain-dump everything on your mind — all through conversation.
 
