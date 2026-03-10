@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - `/tycana:morning` and `/tycana:review` now determine today's date and day of week from MCP response timestamps, preventing incorrect day references in briefings and reviews.
 - `/tycana:upgrade` rewritten to work with Claude's plugin system (marketplace update + plugin update flow) instead of GitHub Releases.
+- `/tycana:upgrade` uses fully qualified `tycana@tycana` name for `claude plugin update` (bare name fails).
 
 ## [1.0.0] - 2026-03-08
 

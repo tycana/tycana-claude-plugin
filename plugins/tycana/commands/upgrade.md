@@ -63,10 +63,10 @@ Check for and install updates to the Tycana plugin.
    Update now?
    ```
 
-7. **Run the update.**
+7. **Run the update.** Note: the CLI requires the fully qualified `plugin@marketplace` name.
 
    ```bash
-   claude plugin update tycana
+   claude plugin update tycana@tycana
    ```
 
 8. **Confirm success.**
@@ -80,4 +80,4 @@ Check for and install updates to the Tycana plugin.
 
 "Couldn't check for updates — the marketplace repo may be unreachable. You can try manually:
 1. `claude plugin marketplace update tycana`
-2. `claude plugin update tycana`"
+2. `claude plugin update tycana@tycana`"
