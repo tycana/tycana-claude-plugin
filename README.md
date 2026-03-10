@@ -40,11 +40,18 @@ Unlike a task list Claude reads back to you, Tycana is a productivity backend Cl
 claude plugin install tycana
 ```
 
-## Requirements
+## Pricing
 
-Tycana requires an account. [Sign up at tycana.com](https://www.tycana.com) — free trial available, then $15/month or $150/year.
+This plugin requires a Tycana subscription. One plan, everything included.
 
-**Connection options:**
+- **$15/month** or **$150/year** (2 months free)
+- 14-day free trial, no credit card required
+- No feature tiers, no per-seat pricing, no upsells
+
+[Start your free trial](https://www.tycana.com/getting-started/)
+
+## Connection
+
 - **Claude.ai** — connects automatically via OAuth on first use
 - **Claude Code** — this plugin configures the MCP connection for you
 - **Manual setup** — see [tycana.com/getting-started](https://www.tycana.com/getting-started) for bearer token and direct MCP configuration
@@ -76,7 +83,9 @@ commands/
 
 - [Tycana website](https://www.tycana.com)
 - [Getting started guide](https://www.tycana.com/getting-started)
-- [MCP documentation](https://www.tycana.com/docs/mcp)
+- [MCP documentation](https://www.tycana.com/mcp/)
+- [Privacy Policy](https://app.tycana.com/privacy)
+- [Terms of Service](https://app.tycana.com/terms)
 
 ## License
 
