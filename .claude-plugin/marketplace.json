@@ -1,0 +1,22 @@
+{
+  "name": "tycana",
+  "owner": {
+    "name": "Tycana",
+    "email": "hello@tycana.com"
+  },
+  "metadata": {
+    "description": "Tycana plugins for Claude Code",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "tycana",
+      "source": ".",
+      "description": "AI productivity partner — persistent tasks, energy-aware planning, intelligent reviews, and daily workflows through natural conversation.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Tycana"
+      }
+    }
+  ]
+}

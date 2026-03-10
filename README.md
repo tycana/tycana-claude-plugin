@@ -36,8 +36,11 @@ Unlike a task list Claude reads back to you, Tycana is a productivity backend Cl
 
 ## Install
 
+In Claude Code:
+
 ```
-claude plugin install tycana
+/plugin marketplace add tycana/tycana-claude-plugin
+/plugin install tycana@tycana
 ```
 
 ## Pricing
