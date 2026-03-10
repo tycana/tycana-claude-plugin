@@ -18,7 +18,7 @@ Give the user an honest, conversational assessment of how their work is going.
    - "month" → `scope="this_month", focus="full"`
    - "project:name" → `scope="project:{name}", focus="full"`
 
-2. **Get the review.** Call `review` with the determined scope and `focus="full"`.
+2. **Get the review.** Call `review` with the determined scope and `focus="full"`. **Determine today's date and day of week** from the `period.until` timestamp — reference the correct day throughout the review.
 
 3. **Get current context.** Call `get_context(scope="this_week")` for stale items and project health.
 

@@ -12,7 +12,7 @@ Generate a personalized morning briefing using the user's real Tycana data.
 
 ## Process
 
-1. **Get today's context.** Call `get_context(scope="today")` to see what the user is dealing with.
+1. **Get today's context.** Call `get_context(scope="today")` to see what the user is dealing with. **Determine today's date and day of week** from the response timestamps — reference the correct day throughout the briefing.
 
 2. **Build the plan.** Call `plan_day` with:
    - `available_hours`: use the argument if provided, otherwise default to 8.0
