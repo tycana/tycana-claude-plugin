@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Tycana plugins for Claude Code",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "tycana",
       "source": "./plugins/tycana",
       "description": "AI productivity partner — persistent tasks, energy-aware planning, intelligent reviews, and daily workflows through natural conversation.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": {
         "name": "Tycana"
       }

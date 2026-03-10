@@ -2,6 +2,7 @@
 description: "Check for plugin updates and upgrade to the latest version."
 allowed-tools:
   - Bash
+  - AskUserQuestion
 ---
 
 # /tycana:upgrade — Plugin Update
@@ -10,65 +11,73 @@ Check for and install updates to the Tycana plugin.
 
 ## Process
 
-1. **Get current version.** Read the installed plugin version:
+1. **Get installed version.** Read from the plugin system's manifest:
 
    ```bash
-   cat "${CLAUDE_PLUGIN_ROOT}/../../.claude-plugin/plugin.json" 2>/dev/null | grep '"version"' | head -1
+   cat ~/.claude/plugins/installed_plugins.json
    ```
 
-   If that fails, try finding it relative to where the command is running. The version is in `.claude-plugin/plugin.json`.
+   Find `"tycana@tycana"` and extract the `version` and `gitCommitSha` fields.
 
-2. **Check latest version.** Fetch the latest release from GitHub:
+2. **Fetch latest from GitHub.** Update the marketplace repo:
 
    ```bash
-   curl -s "https://api.github.com/repos/tycana/tycana-claude-plugin/releases/latest" | grep '"tag_name"' | head -1
+   claude plugin marketplace update tycana
    ```
 
-   Strip the `v` prefix if present for comparison.
+3. **Read latest version from marketplace.** After the marketplace update:
 
-3. **Compare versions.**
+   ```bash
+   cat ~/.claude/plugins/marketplaces/tycana/plugins/tycana/.claude-plugin/plugin.json
+   ```
+
+   Extract the `version` field.
+
+4. **Compare versions.**
 
    **If already on latest:**
    ```
-   Tycana plugin is up to date (v1.0.0).
+   Tycana plugin is up to date (v1.0.1).
    ```
    Done.
 
-   **If update available**, continue to step 4.
+   **If update available**, continue to step 5.
 
-4. **Show what changed.** Fetch the changelog:
+5. **Show what changed.** Read the changelog from the updated marketplace repo:
 
    ```bash
-   curl -s "https://raw.githubusercontent.com/tycana/tycana-claude-plugin/main/CHANGELOG.md"
+   cat ~/.claude/plugins/marketplaces/tycana/CHANGELOG.md
    ```
 
-   Display entries between the installed and latest versions.
+   Display only the entries between the installed and latest versions. Summarize concisely.
 
-5. **Confirm with the user.** Show the update summary and ask:
+6. **Confirm with the user.** Show the update summary and ask:
 
    ```
-   Tycana plugin update available: v1.0.0 → v1.1.0
+   Tycana plugin update available: v1.0.0 → v1.0.1
 
    What's new:
-   - Added /tycana:wrap-up command
-   - Improved capture inference guidelines
+   - Fixed date grounding in morning and review commands
+   - Rewritten upgrade command
 
    Update now?
    ```
 
-6. **Run the update.** Use the built-in plugin update mechanism:
+7. **Run the update.**
 
    ```bash
    claude plugin update tycana
    ```
 
-7. **Confirm success.**
+8. **Confirm success.**
 
    ```
-   Tycana plugin updated to v1.1.0.
+   Tycana plugin updated to v1.0.1.
    Restart Claude Code to pick up the changes.
    ```
 
-## If Offline or GitHub Unreachable
+## If Marketplace Update Fails
 
-"Couldn't check for updates (offline or GitHub unreachable). You can update manually with `claude plugin update tycana`."
+"Couldn't check for updates — the marketplace repo may be unreachable. You can try manually:
+1. `claude plugin marketplace update tycana`
+2. `claude plugin update tycana`"
